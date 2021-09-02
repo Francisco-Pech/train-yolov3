@@ -68,7 +68,6 @@ if __name__ == "__main__":
         cap = cv2.VideoCapture(0)
         out = cv2.VideoWriter('output.mp4',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (1280,960))
     else:
-        os.environ["CUDA_VISIBLE_DEVICES"] = "1"
         cap = cv2.VideoCapture(opt.directorio_video)
         # frame_width = int(cap.get(3))
         # frame_height = int(cap.get(4))

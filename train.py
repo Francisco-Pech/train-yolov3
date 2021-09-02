@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     # If specified we start from checkpoint
     if opt.pretrained_weights:
-        if opt.pretrained_weights.endswith(".pth"):
+        if opt.pretrained_weights.endswith(".weights"):
             model.load_state_dict(torch.load(opt.pretrained_weights))
         else:
             model.load_darknet_weights(opt.pretrained_weights)
