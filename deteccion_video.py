@@ -56,7 +56,7 @@ if __name__ == "__main__":
     model = Darknet(opt.model_def, img_size=opt.img_size).to(device)
 
 
-    if opt.weights_path.endswith(".weights"):
+    if opt.weights_path.endswith(".pth"):
         model.load_darknet_weights(opt.weights_path)
     else:
         model.load_state_dict(torch.load(opt.weights_path))
@@ -71,7 +71,7 @@ if __name__ == "__main__":
         cap = cv2.VideoCapture(opt.directorio_video)
         # frame_width = int(cap.get(3))
         # frame_height = int(cap.get(4))
-        out = cv2.VideoWriter('outp.mp4v',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (1280,960))
+        out = cv2.VideoWriter('outp.mp4',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (1280,960))
     colors = np.random.randint(0, 255, size=(len(classes), 3), dtype="uint8")
     a=[]
     while cap:
