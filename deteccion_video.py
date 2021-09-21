@@ -56,7 +56,7 @@ if __name__ == "__main__":
     model = Darknet(opt.model_def, img_size=opt.img_size).to(device)
 
 
-    if opt.weights_path.endswith(".pth"):
+    if opt.weights_path.endswith(".weights"):
         model.load_darknet_weights(opt.weights_path)
     else:
         model.load_state_dict(torch.load(opt.weights_path))
